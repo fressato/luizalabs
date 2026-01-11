@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi_pagination import add_pagination
 from sqlalchemy.exc import IntegrityError
-from routers import api_router
+from workoutapi.routers import api_router
 
 app = FastAPI(title='WorkoutApi')
 
