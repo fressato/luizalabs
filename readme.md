@@ -1,37 +1,79 @@
-# Desafios Luizalabs - Python
-Repositório contendo soluções para os desafios propostos no bootcamp/curso da Luizalabs.
+# WorkoutAPI
 
-## 📂 Estrutura do Projeto
+API de gerenciamento de academias e treinos, desenvolvida utilizando **FastAPI**.
 
-### 1. Sistema Bancário V1 (Funcional)
+## � Tecnologias
 
-Arquivo: `desafio1_solution.py`
-Implementação procedural/funcional de um sistema bancário simples.
-- **Funcionalidades**: Depósito, Saque, Extrato, Criação de Usuário e Conta.
-- **Destaques**: Uso de argumentos posicionais e nomeados (`*args`, `**kwargs` e `/`), validações robustas.
+- **[FastAPI](https://fastapi.tiangolo.com/)**: Framework web moderno e rápido.
+- **[Uvicorn](https://www.uvicorn.org/)**: Servidor ASGI.
+- **[SQLAlchemy](https://www.sqlalchemy.org/)**: ORM para manipulação do banco de dados.
+- **[Alembic](https://alembic.sqlalchemy.org/)**: Ferramenta de migração de banco de dados.
+- **[Pydantic](https://docs.pydantic.dev/)**: Validação de dados.
 
-### 2. Sistema Bancário V2 (POO)
+## 🛠️ Como Executar
 
-Arquivo: `desafio2_solution.py`
-Evolução do sistema bancário utilizando Orientação a Objetos.
-- **Classes Principais**: `Cliente`, `PessoaFisica`, `Conta`, `ContaCorrente`, `Historico`, `Transacao`.
-- **Conceitos Aplicados**:
-    - Herança e Polimorfismo.
-    - Classes Abstratas (`ABC`).
-    - Encapsulamento com Properties.
-    - Modelagem de negócios mais complexa (várias contas por cliente, histórico de transações).
+Siga os passos abaixo para configurar e rodar o projeto localmente.
 
-### 3. Desafios de Código (Lógica)
+### Pré-requisitos
 
-Pasta: `desafios do código/`
-Soluções para exercícios isolados de lógica de programação:
-- `desafio_gagdet.py`: Exercícios com gadgets/equipamentos.
-- `desafio_mensagem.py`: Manipulação de mensagens e strings.
-- `desafio_robo.py`: Lógica de movimentação ou controle de robô.
-- `desafio_robo_nomeador.py`: Algoritmos de nomeação automática.
+- Python 3.11+
+- Pip (Gerenciador de pacotes do Python)
 
-## 🚀 Como Executar
-Para executar qualquer um dos desafios, utilize o interpretador Python:
+### Instalação
+
+1. Clone o repositório e entre na pasta do projeto:
+   ```bash
+   git clone https://github.com/seurepositorio/workoutapi.git
+   cd luizalabs
+   ```
+
+2. Crie um ambiente virtual (opcional, mas recomendado) e instale as dependências:
+   ```bash
+   python -m venv venv
+   # No Windows
+   venv\Scripts\activate
+   # No Linux/Mac
+   source venv/bin/activate
+   
+   pip install -r requirements.txt
+   ```
+
+### Banco de Dados e Migrações
+
+O projeto utiliza `Makefile` para facilitar comandos comuns. Para criar as tabelas no banco de dados, execute:
+
 ```bash
-# Exemplo para o Sistema Bancário V2
-python desafio2_solution.py
+make run-migrations
+```
+
+Isso executará o `alembic upgrade head`.
+
+### Executando a API
+
+Para iniciar o servidor de desenvolvimento:
+
+```bash
+make run
+```
+
+A API estará acessível em `http://127.0.0.1:8000`.
+A documentação interativa (Swagger UI) pode ser acessada em `http://127.0.0.1:8000/docs`.
+
+---
+
+## 📂 Outros Desafios
+
+Este repositório também contém soluções para desafios anteriores do bootcamp.
+
+### Desafios do Projeto (Sistema Bancário)
+
+Localizados na pasta `desafios do projeto/`:
+
+- **Sistema Bancário V1 (`desafio1_solution.py`)**: Implementação procedural.
+- **Sistema Bancário V2 (`desafio2_solution.py`)**: Implementação orientada a objetos.
+
+### Desafios de Código (Lógica)
+
+Localizados na pasta `desafios do código/`:
+
+- Soluções para exercícios diversos de lógica de programação.
